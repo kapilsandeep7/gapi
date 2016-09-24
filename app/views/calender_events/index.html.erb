@@ -1,0 +1,52 @@
+
+
+<section>
+<div class="inner-block">
+<h1>All Events</h1>
+<div class="frm">
+     <div class="table-responsive left width100">
+ <table class="table table-bordered table-hover tablesorter"  id="myTable">
+        <thead>
+          <tr>
+            
+            <th><span></span><%=  "Summary" %></th>
+            <th><span></span><%=  "Location" %></th>
+            <th><span></span><%= "Start Date" %></th>
+            <th><span></span><%= "End Date" %></th>  
+            <th class="sort-disabled"><%= "Status" %></th>
+           
+          </tr>
+        </thead>
+        <tbody>
+
+          <% if(!@calendar_list.blank?) %>
+            <% @calendar_list.each do |calendar| %>
+           
+              <tr>
+               
+                <td><%= calendar.summary %></td>
+                <td><%= calendar.location %></td>
+                <td><%= calendar.start_date %></td>
+                <td><%= calendar.end_date %></td>
+
+                <td>
+                 <%= calendar.status %>
+                </td>
+
+
+             
+            
+              </tr>
+            <% end %>
+          <%else%>
+            <tr><td colspan="6" align="center">No records found</td></tr>
+          <%end%>
+
+        </tbody>
+      </table>  
+    	
+    	
+ </div>
+ </div>
+</section>
+

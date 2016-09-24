@@ -1,0 +1,23 @@
+<section>
+<div class="inner-block">
+<h1>Edit User</h1>
+<div class="frm">
+    	
+ <%= form_for( @user , :url=>{:action=> "edit_user"}) do |f| %>
+
+    	<div class="frm-row col-2">
+        	<div class="frm-col-1"><label>First Name</label><input type="text" name="first_name" value="<%= @user.name.partition(" ").first %>" />
+        	</div>
+	        <div class="frm-col-2"> <label>Last Name</label><input type="text" name="last_name"value="<%= @user.name.partition(" ").last %>" /></div>
+       </div>
+        <div class="frm-row col-1">
+        	<div class="frm-col-1"><label>Email</label><input type="text" name="email" value="<%= @user.email %>" /></div>
+	    </div>
+        <div class="frm-row col-1">
+        	<div class="frm-col-1"><input type="radio" class="with-font" id="adminrole" <%= @user.role == 1 ? "Checked" : "" %>name="role" value="1"><label for="adminrole">Admin</label> 
+        	<input type="radio" class="with-font" id="userrole" <%= @user.role == 0 or @user.role == nil  ? "Checked" : "" %> name="role" value="0"><label for="userrole">User</label></div>
+	    </div>	 
+ <div class="btn"> <%= f.button  'Submit',  :name => 'submit', :class =>'#run-now-btn' %> </div>
+ <% end %>
+ </div>
+</section>

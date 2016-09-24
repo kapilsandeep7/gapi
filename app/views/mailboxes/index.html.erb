@@ -1,0 +1,61 @@
+
+<section>
+
+<%= link_to '<button type="button" class="btn btn-primary">Add Email</button>'.html_safe, '/auth/google_oauth2' %>
+</section>
+
+<section>
+
+<div class="inner-block">
+
+<h1>Mail Box</h1>
+<div class="frm">
+
+     <div class="table-responsive left width100">
+ <table class="table table-bordered table-hover tablesorter"  id="myTable">
+        <thead>
+          <tr>
+            
+            <th><span></span><%=  "Name" %></th>
+            <th><span></span><%=  "Email" %></th>
+            <th><span></span><%= "Last Pull Date" %></th>
+                   <th class="sort-disabled"><%= "Status" %></th>
+            <th class="action sort-disabled">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% if(!@mailboxes .blank?) %>
+            <%  @mailboxes .each do |account| %>
+           
+              <tr>
+               
+                <td><%= account.name %></td>
+                
+                <td><%= account.email %></td>
+                <td><%= account.created_at %></td>          
+                <td><%= "Authenticated" %></td>          
+                                   
+
+                <td class="action">
+                 
+                  <%= link_to 'messages'.html_safe, fetch_messages_path(account), {:class=>'edit-icon', :title=>'Edit'} %>
+                  |<%= link_to 'Calender Events'.html_safe, fetch_events_path(account), {:class=>'edit-icon', :title=>'Edit'} %>
+     
+                 <%#= link_to 'delete'.html_safe, mailboxes_delete_path(account), {:class=>'edit-icon', :method =>'get', :title=>'delete'} %>            
+                </td>
+                </td>
+
+              </tr>
+            <% end %>
+          <%else%>
+            <tr><td colspan="6" align="center">No records found</td></tr>
+          <%end%>
+
+        </tbody>
+      </table>  
+    	
+    	
+ </div>
+ </div>
+</section>

@@ -1,0 +1,60 @@
+<section>
+<%= link_to '<button type="button" class="btn btn-primary">Add User</button>'.html_safe, add_user_path %>
+<div class="inner-block">
+<h1>All User</h1>
+<div class="frm">
+     <div class="table-responsive left width100">
+ <table class="table table-bordered table-hover tablesorter"  id="myTable">
+        <thead>
+          <tr>
+            
+            <th><span></span><%=  "First Name" %></th>
+            <th><span></span><%=  "Last Name" %></th>
+            <th><span></span><%= "Email" %></th>
+            <th><span></span><%= "Role" %></th>  
+            <th class="sort-disabled"><%= "Status" %></th>
+            <th class="action sort-disabled">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% if(!@users.blank?) %>
+            <% @users.each do |account| %>
+           
+              <tr id="row-<%= account.id %>">
+               
+                <td><%= account.name.partition(" ").first %></td>
+                <td><%= account.name.partition(" ").last %></td>
+                <td><%= account.email %></td>
+
+                <td>
+                 <%= account.role == 1 ? 'Admin' : 'User' %>
+                </td>
+
+
+                <td>
+                
+                   <%= account.status == true ? 'Active' : 'Inactive' %>
+                  
+                </td>
+                <td class="action">
+                 
+                  <%= link_to 'edit'.html_safe, edit_user_path(account), {:class=>'edit-icon', :title=>'Edit'} %>
+     
+                 <%= link_to 'delete'.html_safe, delete_user_path(account), {:class=>'edit-icon', :method =>'delete', :title=>'Edit'} %>            
+                </td>
+                </td>
+
+              </tr>
+            <% end %>
+          <%else%>
+            <tr><td colspan="6" align="center">No records found</td></tr>
+          <%end%>
+
+        </tbody>
+      </table>  
+    	
+    	
+ </div>
+ </div>
+</section>

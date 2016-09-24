@@ -1,0 +1,21 @@
+<section>
+<div class="inner-block">
+<h1>Add User</h1>
+<div class="frm">
+<%= form_for( User.new , :url=>{:action=> "add_user"}) do |f| %>
+
+    	<div class="frm-row col-2">
+        	<div class="frm-col-1"><label>First Name</label><input type="text" name="first_name" /></div>
+	        <div class="frm-col-2"> <label>Last Name</label><input type="text" name="last_name" /></div>
+       </div>
+        <div class="frm-row col-1">
+        	<div class="frm-col-1"><label>Email</label><input type="text" name="email" /></div>
+	    </div>
+        <div class="frm-row col-1">
+        	<div class="frm-col-1"><input type="radio" class="with-font" id="adminrole" name="role" value="1"><label for="adminrole">Admin</label> 
+        	<input type="radio" class="with-font" id="userrole" name="role" value="0"><label for="userrole">User</label></div>
+	    </div>	 
+ <div class="btn"> <%= f.button  'Submit',  :name => 'submit', :class =>'#run-now-btn' %> </div>
+ <% end %>
+ </div>
+</section>

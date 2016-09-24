@@ -1,0 +1,53 @@
+
+<section>
+
+<%= link_to '<button type="button" class="btn btn-primary">Add Email</button>'.html_safe, '/auth/google_oauth2' %>
+</section>
+
+<section>
+
+<div class="inner-block">
+
+<h1>EmailMessages</h1>
+<div class="frm">
+
+     <div class="table-responsive left width100">
+ <table class="table table-bordered table-hover tablesorter"  id="myTable">
+        <thead>
+          <tr>
+            
+            <th><span></span><%=  "From" %></th>
+            <th><span></span><%=  "Subject" %></th>
+            <th><span></span><%= " Date" %></th>
+                   <th class="sort-disabled"><%= "Body" %></th>
+          
+          </tr>
+        </thead>
+        <tbody>
+
+           <% if(!@message_list.blank?) %>
+            <% @message_list.each do |msg| %>
+           
+              <tr>
+               
+                <td><%= msg.from %></td>
+                
+                <td><%= msg.subject %></td>
+                <td><%= msg.date %></td>          
+                <td><%= msg.body.present? ? msg.body.html_safe[0..100] : "n/a" %></td>          
+                                   
+
+              
+                </td>
+
+              </tr>
+            <% end %>
+            <% end %>
+
+        </tbody>
+      </table>  
+    	
+    	
+ </div>
+ </div>
+</section>

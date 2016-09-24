@@ -1,0 +1,10 @@
+<section>
+
+<div class="block">
+<div class="home-box user"><h1><a href="/user/show">Users</a></h1></div>
+<div class="home-box mail-box"><h1><a href="<%= mailboxes_index_path %>">Mail box</a></h1></div>
+<div class="home-box email-message"><h1><a href="<%= current_user.mailbox.present? ? email_messages_path(current_user.mailbox.first.id): "javascript:void(0)" %>">Email Messages</a></h1></div>
+<div class="home-box cal-event"><h1><a href="<%= current_user.mailbox.present? ? calender_events_path(current_user.mailbox.first.id): "javascript:void(0)" %>">Calendar Events</a></h1></div>
+<div class="home-box reports"><h1><a href="<%= reports_index_path %>">Reports</a></h1></div>
+</div>
+</section>

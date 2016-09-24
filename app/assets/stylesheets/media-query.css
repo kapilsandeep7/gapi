@@ -1,0 +1,25 @@
+/* ================== CSS Written by Kinjal Nagar - 11/07/2016 ====================*/
+/*@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+}
+@media only screen and (min-width: 1382px) {
+}
+*/
+@media screen and (max-width:991px){
+.home-box{ width: calc(50% - 120px); }
+footer{text-align:center;}
+}
+@media screen and (max-width:419px){
+header{ padding-bottom:10px;}
+.home-box{ width: calc(100% - 120px);}
+.hdr-logo{float:none; margin:20px; margin-bottom:0px; }
+.welcome-name{float:none; margin:0px 20px 10px;}
+
+}
+
+

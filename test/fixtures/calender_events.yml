@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: MyString
+  summary: MyString
+  location: MyString
+  start_date: 2016-09-22 18:26:12
+  end_date: 2016-09-22 18:26:12
+  status: MyString
+  mailbox_id: 1
+
+two:
+  event_id: MyString
+  summary: MyString
+  location: MyString
+  start_date: 2016-09-22 18:26:12
+  end_date: 2016-09-22 18:26:12
+  status: MyString
+  mailbox_id: 1
